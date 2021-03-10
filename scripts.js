@@ -3,23 +3,23 @@ const share = document.getElementById('share');
 const profile = document.getElementById('profile');
 const cardShare = document.querySelector('.card__share');
 
-const changeColor = () =>{
-    if(cardShare.hasAttribute('active'))
+const changeColor = (element) =>{
+    const isActive = element.hasAttribute('active');
+    if(isActive)
     {
-        cardShare.style.backgroundColor = 'hsl(210, 46%, 95%)';
-        cardShare.removeAttribute('active');
+        element.style.backgroundColor = 'hsl(210, 46%, 95%)';
+        element.removeAttribute('active');
     }else{
-        cardShare.style.backgroundColor = 'hsl(217, 19%, 35%)';
-        cardShare.setAttribute('active','true')
+        element.style.backgroundColor = 'hsl(217, 19%, 35%)';
+        element.setAttribute('active','true')
     }
 }
 
 
 const showOption = () =>{
-    changeColor();
+    changeColor(cardShare);
     profile.classList.toggle('disabled');
     socialNetwork.classList.toggle('disabled');
-    socialNetwork.style.transform = 'translateX(0)';
 }
 
 share.addEventListener('click',showOption);
