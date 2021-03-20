@@ -137,4 +137,9 @@
     .card__text, .card__share{
         padding: 30px;
     }
+
+    .img{
+        object-fit:cover;
+        object-position: center left;
+    }
 }
