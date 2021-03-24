@@ -7,7 +7,7 @@ const changeColor = (element) =>{
     const isActive = element.hasAttribute('active');
     if(isActive)
     {
-        element.style.backgroundColor = 'hsl(210, 46%, 95%)';
+        element.style.backgroundColor = 'rgba(255,255,255,1)';
         element.removeAttribute('active');
     }else{
         element.style.backgroundColor = 'hsl(217, 19%, 35%)';
@@ -20,6 +20,7 @@ const showOption = () =>{
     changeColor(cardShare);
     profile.classList.toggle('disabled');
     socialNetwork.classList.toggle('disabled');
+    share.classList.toggle('btn-share--active');
 }
 
 share.addEventListener('click',showOption);
